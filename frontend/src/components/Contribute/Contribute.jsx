@@ -16,7 +16,7 @@ function Contribute() {
       <NavigationBar />
       <div className="allContriComp">
         <Title />
-        <ShowDropDowns unitDisplay={true} setSubject={setSubject} subject={subject}/>
+        <ShowDropDowns unitDisplay={true} setSubject={setSubject} setUnit={setUnit} subject={subject}/>
         <Card className="Qsection">
           <CreateQ unit={unit} setUnit={setUnit}/>
           {console.log(unit)}
