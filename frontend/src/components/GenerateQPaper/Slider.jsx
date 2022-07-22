@@ -5,7 +5,7 @@ import { Form, Col, Row } from "react-bootstrap";
 
 const SliderWithColumnLayoutLabel = (props) => {
 
-    const [ value, setValue ] = React.useState(50);
+    // const [ value, setValue ] = React.useState(50);
   
     return (
       <Form>
@@ -15,8 +15,8 @@ const SliderWithColumnLayoutLabel = (props) => {
           </Form.Label>
           <Col sm="6">
             <RangeSlider
-              value={value}
-              onChange={e => setValue(e.target.value)}
+              value={props.value}
+              onChange={e => props.setValue(e.target.value)}
             />
           </Col>
         </Form.Group>
