@@ -22,7 +22,12 @@ app.use(express.json())
 
 configureRoutes(app)
 
-app.listen(5000, (err) => {
+let port = process.env.PORT;
+if (port == null || port == ""){
+  port = 5000;
+}
+
+app.listen(port, (err) => {
   if (err) console.error(err)
-  console.log('server started at port 5000')
+  console.log('server started successfully')
 })
