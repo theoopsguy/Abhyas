@@ -15,6 +15,7 @@ app.use((req, res, next) => {
     'Access-Control-Allow-Headers',
     'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With'
   )
+  res.send('<h1>Hello</h1>')
   next()
 })
 
