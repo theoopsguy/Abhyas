@@ -93,7 +93,7 @@ function ShowDropDowns(props) {
             name="Units"
             options={unitOptions}
             field={unit}
-            setField={setUnit}
+            setField={props.setUnit}
           />:null}
         </Container>
         
