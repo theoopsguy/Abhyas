@@ -1,4 +1,7 @@
 {
+  "name": "abhyas",
+  "description": "A crowd sourcing model for generation of a large question bank. Volunteers can contribute questions to the database, which can then be used by teachers to generate question paper and by students to take up quizes.",
+  "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -6,6 +9,12 @@
     "serve": "clear && node .",
     "prod": "clear && node ."
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theoopsguy/Abhyas.git"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "ejs": "^3.1.6",
@@ -17,15 +26,6 @@
   "devDependencies": {
     "dotenv": "^16.0.0"
   },
-  "name": "abhyas",
-  "description": "A crowd sourcing model for generation of a large question bank. Volunteers can contribute questions to the database, which can then be used by teachers to generate question paper and by students to take up quizes.",
-  "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/theoopsguy/Abhyas.git"
-  },
-  "author": "",
-  "license": "ISC",
   "engines": {
     "node": "16.15.0"
   },
