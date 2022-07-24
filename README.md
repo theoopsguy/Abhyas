@@ -9,6 +9,7 @@ A crowd sourcing model for generation of a large question bank. Volunteers can c
 * MongoDB
 * Express
 * React
+* EJS
 * Node.js
 * NPM Packages
 ---
