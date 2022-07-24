@@ -1,5 +1,4 @@
-import mongoose from 'mongoose'
-import Unit from './unit.js'
+import mongoose from 'mongoose';
 
 const subjectSchema = new mongoose.Schema({
   name: {

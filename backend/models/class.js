@@ -1,9 +1,9 @@
-import mongoose from 'mongoose'
-import Subject from './subject.js'
+import mongoose from 'mongoose';
+
 
 const classSchema = new mongoose.Schema({
   standard: {
-    type: Number, //
+    type: Number, 
     required: true,
   },
 
