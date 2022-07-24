@@ -4,11 +4,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
 function CreateQ(props) {
-  const [questionStatement, setQuestionStatement] = useState("");
-  const [option0, setOption0] = useState("");
-  const [option1, setOption1] = useState("");
-  const [option2, setOption2] = useState("");
-  const [option3, setOption3] = useState("");
+  const questionValues = {
+    questionStatement: "",
+    option0: "",
+    option1: "",
+    option2: "",
+    option3: "",
+  };
+
+  function onChangeHandeler(e) {
+    questionValues[e.target.attributes.handeler.value] = e.target.value;
+    console.log(questionValues);
+  }
 
   function valueHandler(setter) {
     return (e) => {
@@ -29,9 +36,13 @@ function CreateQ(props) {
           Question:
         </Form.Label>
         <Col sm={12}>
-
-          <Form.Control type="text" placeholder="Question Statement" required />
-
+          <Form.Control
+            type="text"
+            placeholder="Question Statement"
+            handeler="questionStatement"
+            onChange={onChangeHandeler}
+            required
+          />
         </Col>
       </Form.Group>
 
@@ -41,11 +52,21 @@ function CreateQ(props) {
         </Form.Label>
 
         <Form.Group as={Col} className="mb-3 optionForm">
-
-          <Form.Check type="radio" name="options" id="option1" className="optionBox" required />
+          <Form.Check
+            type="radio"
+            name="options"
+            id="option1"
+            className="optionBox"
+            required
+          />
           <Col sm={10}>
-            <Form.Control type="text" placeholder="Option 1" required />
-
+            <Form.Control
+              type="text"
+              placeholder="Option 1"
+              required
+              handeler="option0"
+              onChange={onChangeHandeler}
+            />
           </Col>
         </Form.Group>
 
@@ -57,9 +78,13 @@ function CreateQ(props) {
             className="optionBox"
           />
           <Col sm={10}>
-
-            <Form.Control type="text" placeholder="Option 2" required />
-
+            <Form.Control
+              type="text"
+              placeholder="Option 2"
+              handeler="option1"
+              onChange={onChangeHandeler}
+              required
+            />
           </Col>
         </Form.Group>
 
@@ -71,9 +96,13 @@ function CreateQ(props) {
             className="optionBox"
           />
           <Col sm={10}>
-
-            <Form.Control type="text" placeholder="Option 3" required />
-
+            <Form.Control
+              type="text"
+              placeholder="Option 3"
+              handeler="option2"
+              onChange={onChangeHandeler}
+              required
+            />
           </Col>
         </Form.Group>
 
@@ -85,10 +114,13 @@ function CreateQ(props) {
             className="optionBox"
           />
           <Col sm={10}>
-
-            <Form.Control type="text" placeholder="Option 4" required />
-
-
+            <Form.Control
+              type="text"
+              placeholder="Option 4"
+              handeler="option3"
+              onChange={onChangeHandeler}
+              required
+            />
           </Col>
         </Form.Group>
       </Form.Group>
@@ -101,11 +133,16 @@ function CreateQ(props) {
               onClick={async () => {
                 const postJSON = {
                   unitId: props.unit,
-                  options: [option0, option1, option2, option3],
-                  questionStatement,
+                  options: [
+                    questionValues.option0,
+                    questionValues.option1,
+                    questionValues.option2,
+                    questionValues.option3,
+                  ],
+                  questionStatement: questionValues.questionStatement,
                   answer: answerIdx(),
                 };
-                console.log(postJSON);
+                console.log(postJSON, "postjson");
                 try {
                   console.log(
                     await axios.post(
@@ -113,7 +150,9 @@ function CreateQ(props) {
                       postJSON
                     )
                   );
-                } catch (error) {}
+                } catch (error) {
+                  console.log(error);
+                }
               }}
             >
               Submit

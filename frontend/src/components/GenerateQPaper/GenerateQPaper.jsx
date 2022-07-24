@@ -14,6 +14,8 @@ import QCard from "../Question/QCard";
 
 
 function GenerateQPaper() {
+  const [ noOfQues, setnoOfQues ] = React.useState(50);
+  
   const [Quesionlist, setQuestionlist] = useState(
     ""
   );
@@ -47,7 +49,7 @@ const [subject, setSubject] = useState("");
       />
       {/* <Downloadb /> */}
       <div className="mySlider">
-        <Slider label="Questions" />
+        <Slider label="Questions" setValue={setnoOfQues} value={noOfQues}/>
       </div>
 
       <div className="d-flex justify-content-center mt-3">
@@ -58,17 +60,20 @@ const [subject, setSubject] = useState("");
         <Question />
         <Question /> */}
         {Quesionlist!=""
-          ? Quesionlist.Questions.map((qObj) => {
-              return (
-                <QCard
+          ? Quesionlist.Questions.map((qObj,index) => {
+           
+                if(index<noOfQues){
+                  return <QCard
                   Q={qObj.question}
                   op0={qObj.options[0]}
                   op1={qObj.options[1]}
                   op2={qObj.options[2]}
                   op3={qObj.options[3]}
                   ans={String.fromCharCode(97 + parseInt(qObj.answer))}
-                />
-              );
+                />}
+                else
+                return null;
+           
             })
           : null}
       </div>

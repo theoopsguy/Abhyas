@@ -20,23 +20,26 @@ router.get('/api/question', async (req, res) => {
 
 router.post('/api/question', async (req, res) => {
   if (!validateQuestion(req.body)) {
+    console.log('if failed')
     res.status(StatusCodes.BAD_REQUEST).end()
     return
   }
   try {
     // class subject
+    console.log(req.body.unitId, 'id')
     const unit = await Unit.findById(req.body.unitId).exec()
+    console.log(unit, 'unit')
     const newQuestion = new Question({
       questionStatement: req.body.questionStatement,
       answer: req.body.answer,
       options: req.body.options,
     })
+    console.log('in try')
     const newQuestionId = (await newQuestion.save()).id
     unit.questions.push(newQuestionId)
     unit.save()
     res.send({ newQuestionId }).status(StatusCodes.CREATED).end()
   } catch (error) {
-    
     console.error(error.message)
     res.status(StatusCodes.BAD_REQUEST).end()
   }
