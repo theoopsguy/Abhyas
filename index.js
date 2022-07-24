@@ -1,12 +1,14 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import configureRoutes from './routes/routes-config.js'
-import 'dotenv/config'
-import cors from 'cors'
 const app = express()
 
 mongoose.connect(process.env.MONGODB_URL, () => {
   console.log('Connected to mongoDB')
+})
+
+app.get("/", (req, res) => {
+  res.send('<h1>Hello Demo</h1>');
 })
 
 app.use((req, res, next) => {
@@ -22,7 +24,12 @@ app.use(express.json())
 
 configureRoutes(app)
 
-app.listen(5000, (err) => {
+let port = process.env.PORT;
+if (port == null || port == ""){
+  port = 5000;
+}
+
+app.listen(port, (err) => {
   if (err) console.error(err)
-  console.log('server started at port 5000')
+  console.log('server started successfully')
 })
