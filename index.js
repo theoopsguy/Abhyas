@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGODB_URL, () => {
 })
 
 app.get("/", (req, res) => {
-  res.send('<h1>Hello Demo</h1>');
+  res.send('<h1>Abhyas API Service</h1>');
 })
 
 app.use((req, res, next) => {
