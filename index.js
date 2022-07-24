@@ -1,7 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import configureRoutes from './routes/routes-config.js'
-import 'dotenv/config'
+// import 'dotenv/config'
 import cors from 'cors'
 const app = express()
 
