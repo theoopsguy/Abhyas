@@ -3,7 +3,8 @@
   "type": "module",
   "scripts": {
     "dev": "clear && nodemon .",
-    "serve": "clear && node ."
+    "serve": "clear && node .",
+    "prod": "clear && node ."
   },
   "dependencies": {
     "cors": "^2.8.5",
