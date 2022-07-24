@@ -1,36 +1,23 @@
 {
-  "name": "abhyas",
-  "description": "A crowd sourcing model for generation of a large question bank. Volunteers can contribute questions to the database, which can then be used by teachers to generate question paper and by students to take up quizes.",
-  "version": "1.0.0",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": "18.3.0"
+  },
   "scripts": {
-    "dev": "clear && nodemon .",
-    "serve": "clear && node .",
-    "prod": "clear && node ."
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/theoopsguy/Abhyas.git"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "html-pdf": "^3.0.1",
     "http-status-codes": "^2.2.0",
-    "mongoose": "^6.2.4"
+    "mongoose": "^6.2.4",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "dotenv": "^16.0.0"
-  },
-  "engines": {
-    "node": "16.15.0"
-  },
-  "bugs": {
-    "url": "https://github.com/theoopsguy/Abhyas/issues"
-  },
-  "homepage": "https://github.com/theoopsguy/Abhyas#readme"
+  }
 }
