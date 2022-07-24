@@ -40,12 +40,12 @@ router.post('/api/question', async (req, res) => {
     unit.save()
     res.send({ newQuestionId }).status(StatusCodes.CREATED).end()
   } catch (error) {
-    console.log('catch mai')
     console.error(error.message)
     res.status(StatusCodes.BAD_REQUEST).end()
   }
 })
 
+// isko randomize krna hain 
 router.post('/api/questions/', async (req, res) => {
   if (!validateQuestionsQuery) {
     res.status(StatusCodes.BAD_REQUEST).end()
