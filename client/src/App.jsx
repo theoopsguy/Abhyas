@@ -10,6 +10,11 @@ import QBank from "./components/QBank/QBank";
 import StudentDashboard from "./components/StudentDashboard/StudentDashboard";
 import ContactUs from "./components/ContactUs/ContactUs";
 import AboutUs from "./components/AboutUs/AboutUs";
+import axios from "axios";
+
+//axios.defaults.baseURL="https://abhyas-app.herokuapp.com/";
+// axios.defaults.baseURL="http://localhost:5000"
+// console.log(import.meta.env.VITE_REACT_APP_BASEURL);
 
 function App() {
   return (
