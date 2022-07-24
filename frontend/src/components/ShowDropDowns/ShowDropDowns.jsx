@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Dropdowns from "../Contribute/Dropdowns";
 import { Card, Container } from "react-bootstrap";
+import axios from "axios";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 function ShowDropDowns(props) {
@@ -15,12 +16,13 @@ function ShowDropDowns(props) {
 
   useEffect(async () => {
     try {
-      const apiResponse = await fetch(
-        "http://localhost:5000/api/info/standard"
+      const apiData = await axios.get(
+        "/api/info/standard"
       );
-      const apiData = await apiResponse.json();
+      console.log(apiData.data);
+      // const apiData = await apiResponse.json();
       // {id : _ , standard : _} => {id : _ , field : _}
-      const modifiedResp = apiData.standards.map((x) => {
+      const modifiedResp = apiData.data.standards.map((x) => {
         return {
           id: x.id,
           field: x.standard,
@@ -34,11 +36,11 @@ function ShowDropDowns(props) {
 
   useEffect(async () => {
     try {
-      const apiResponse = await fetch(
-        `http://localhost:5000/api/standard/${standard}`
+      const apiData = await axios.get(
+        `/api/standard/${standard}`
       );
-      const apiData = await apiResponse.json();
-      const modifiedResp = apiData.subjects.map((x) => {
+      // const apiData = await apiResponse.json();
+      const modifiedResp = apiData.data.subjects.map((x) => {
         return {
           id: x._id,
           field: x.name,
@@ -53,11 +55,11 @@ function ShowDropDowns(props) {
 
   useEffect(async () => {
     try {
-      const apiResponse = await fetch(
-        `http://localhost:5000/api/standard/${standard}`
+      const apiData = await axios.get(
+        `/api/standard/${standard}`
       );
-      const apiData = await apiResponse.json();
-      const modifiedResp = apiData.subjects
+      // const apiData = await apiResponse.json();
+      const modifiedResp = apiData.data.subjects
         .find((x) => {
           return x._id == props.subject;
         })

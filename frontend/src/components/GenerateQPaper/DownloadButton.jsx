@@ -6,7 +6,7 @@ function Downloadb() {
       <button
         onClick={async () => {
           const response = await axios.post(
-            "http://localhost:5000/api/generate/question-paper",
+            "/api/generate/question-paper",
             {
               questionArr: [
                 "622a093444e135074a0f5656",
@@ -27,7 +27,7 @@ function Downloadb() {
       <button
         onClick={async () => {
           const response = await axios.post(
-            "http://localhost:5000/api/generate/answer-key",
+            "/api/generate/answer-key",
             {
               questionArr: [
                 "622a093444e135074a0f5656",

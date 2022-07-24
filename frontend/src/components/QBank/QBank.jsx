@@ -19,7 +19,7 @@ const [subject, setSubject] = useState("");
     try {
       setQuestionlist(
         await (
-          await axios.post("http://localhost:5000/api/questions/", postJSON)
+          await axios.post("/api/questions/", postJSON)
         ).data
       );
     } catch (error) {

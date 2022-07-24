@@ -146,7 +146,7 @@ function CreateQ(props) {
                 try {
                   console.log(
                     await axios.post(
-                      "http://localhost:5000/api/question/",
+                      "/api/question/",
                       postJSON
                     )
                   );
