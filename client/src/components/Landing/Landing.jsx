@@ -26,11 +26,11 @@ function Landing() {
       <Container>
         <Row  md={2} className="g-4" style={{marginTop:"40px"}}>
           <Col className='d-flex justify-content-center'>
-            <LandingCard  imgSource="src\components\Landing\student.png" link='/StudentDashboard' title='Student'/>
+            <LandingCard  imgSource="src\Assets\Images\student.png" link='/StudentDashboard' title='Student'/>
           </Col>
 
           <Col className='d-flex justify-content-center'>
-            <LandingCard imgSource="src\components\Landing\Teacher.png" link='/teacherdashboard' title='Teacher'/>
+            <LandingCard imgSource="src\Assets\Images\Teacher.png" link='/teacherdashboard' title='Teacher'/>
           </Col>
         </Row>
       </Container>      
