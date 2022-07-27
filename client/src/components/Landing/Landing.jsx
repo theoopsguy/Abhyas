@@ -8,6 +8,10 @@ import Col from 'react-bootstrap/Col'
 import "./Landing.css";
 import LandingCard from './LandingCard'
 import NavigationBar from '../Global/NavigationBar'
+// import studentImg from '../../assets/images/student.png'
+// import teacherImg from '../../assets/images/Teacher.png'
+import studentImg from './student.png'
+import teacherImg from './Teacher.png'
 
 function Landing() {
   return (
@@ -22,15 +26,14 @@ function Landing() {
       <div className="container mt-3">
           <Alert className='headerbox text-center'>Who are you?</Alert>
       </div>
-       
       <Container>
         <Row  md={2} className="g-4" style={{marginTop:"40px"}}>
           <Col className='d-flex justify-content-center'>
-            <LandingCard  imgSource="src\Assets\Images\student.png" link='/StudentDashboard' title='Student'/>
+            <LandingCard  imgSource={studentImg} link='/StudentDashboard' title='Student'/>
           </Col>
 
           <Col className='d-flex justify-content-center'>
-            <LandingCard imgSource="src\Assets\Images\Teacher.png" link='/teacherdashboard' title='Teacher'/>
+            <LandingCard imgSource={teacherImg} link='/teacherdashboard' title='Teacher'/>
           </Col>
         </Row>
       </Container>      
