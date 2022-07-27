@@ -8,6 +8,10 @@ import Col from 'react-bootstrap/Col'
 import NavigationBar from '../Global/NavigationBar'
 import LandingCard from "../Landing/LandingCard";
 import "./TeacherDashboard.css";
+import contributeImg from './contribute.png'
+import generateImg from './generate.png'
+import qbankImg from './qbank.png'
+
 
 function TeacherDashboard() 
 {
@@ -25,17 +29,17 @@ function TeacherDashboard()
                     <Row  md={3} className="g-4 ">
                         <Col className='d-flex justify-content-center mt-20'>
                             <div className="imagesOne">
-                                <LandingCard  imgSource="src\components\TeacherDashboard\contribute.png" link='/contribute' title='Contribute A Question'/>
+                                <LandingCard  imgSource={contributeImg} link='/contribute' title='Contribute A Question'/>
                             </div>
                             
                         </Col>
 
                         <Col className='d-flex justify-content-center'>
-                            <LandingCard imgSource="src\components\TeacherDashboard\generate.png" link='/GenerateQPaper' title='Generate Question Paper'/>
+                            <LandingCard imgSource={generateImg} link='/GenerateQPaper' title='Generate Question Paper'/>
                         </Col>
                         
                         <Col className='d-flex justify-content-center'>
-                            <LandingCard imgSource="src\components\TeacherDashboard\qbank.png" link='/qBank' title='Question Bank'/>
+                            <LandingCard imgSource={qbankImg} link='/qBank' title='Question Bank'/>
                         </Col>
                     </Row>
                 </Container>
