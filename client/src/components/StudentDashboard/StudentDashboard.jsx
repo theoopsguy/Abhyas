@@ -29,6 +29,8 @@ import Col from 'react-bootstrap/Col'
 import NavigationBar from '../Global/NavigationBar'
 import LandingCard from "../Landing/LandingCard";
 // import "./TeacherDashboard.css";
+import qBankImg from '../TeacherDashboard/qbank.png'
+import contributeImg from '../TeacherDashboard/contribute.png'
 
 function StudentDashboard() 
 {
@@ -48,14 +50,14 @@ function StudentDashboard()
                         <div className="Contributepage" style={{marginLeft:"13rem"}}>
                             <Col className='d-flex justify-content-center mt-20'>
                                 <div className="imagesOne">
-                                    <LandingCard  imgSource="src\components\TeacherDashboard\contribute.png" link='/contribute' title='Contribute A Question'/>
+                                    <LandingCard  imgSource={contributeImg} link='/contribute' title='Contribute A Question'/>
                                 </div>
                                 
                             </Col> 
                         </div>
                          <div className="QuestionBank">
                          <Col className='d-flex justify-content-center'>
-                                <LandingCard imgSource="src\components\TeacherDashboard\qbank.png" link='/qBank' title='Question Bank'/>
+                                <LandingCard imgSource={qBankImg} link='/qBank' title='Question Bank'/>
                             </Col> 
                          </div>
 
